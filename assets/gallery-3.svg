@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900">
+<defs><linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dce4d4"/><stop offset="1" stop-color="#bfcbbf"/></linearGradient></defs>
+<rect width="720" height="900" fill="url(#base)"/>
+<path d="M138 775 V279 Q138 110 360 110 Q582 110 582 279 V775Z" fill="#fff9f0" opacity=".37"/>
+<path d="M158 760 V282 Q158 133 360 133 Q562 133 562 282 V760" stroke="#fffcf3" stroke-width="2" fill="none" opacity=".6"/>
+<circle cx="360" cy="412" r="140" fill="#fff8ed" opacity=".35"/>
+<g fill="none" stroke="#a78e74" stroke-width="5" opacity=".65"><path d="M250 496 C270 370 446 352 470 497"/><path d="M273 481 C304 404 423 402 450 488"/><path d="M362 426 L362 340"/></g><g transform="translate(580,710) scale(1.0) rotate(18)" opacity=".74"><path d="M0 0 Q85 60 97 155" stroke="#7e997d" stroke-width="5" fill="none"/><path d="M38 29 Q70 20 75 -7 Q41 3 38 29" fill="#7e997d"/><path d="M63 66 Q32 58 20 26 Q59 37 63 66" fill="#7e997d"/><path d="M82 109 Q114 80 118 51 Q78 62 82 109" fill="#7e997d"/><circle r="38" fill="#b99499"/><ellipse rx="21" ry="44" transform="rotate(45)" fill="#b99499"/><ellipse rx="21" ry="44" transform="rotate(-45)" fill="#b99499"/><circle r="18" fill="#f1ddbb"/></g><g transform="translate(130,680) scale(0.87) rotate(6)" opacity=".74"><path d="M0 0 Q85 60 97 155" stroke="#7e997d" stroke-width="5" fill="none"/><path d="M38 29 Q70 20 75 -7 Q41 3 38 29" fill="#7e997d"/><path d="M63 66 Q32 58 20 26 Q59 37 63 66" fill="#7e997d"/><path d="M82 109 Q114 80 118 51 Q78 62 82 109" fill="#7e997d"/><circle r="38" fill="#b99499"/><ellipse rx="21" ry="44" transform="rotate(45)" fill="#b99499"/><ellipse rx="21" ry="44" transform="rotate(-45)" fill="#b99499"/><circle r="18" fill="#f1ddbb"/></g>
+<text x="360" y="235" text-anchor="middle" font-family="Georgia,serif" font-size="19" letter-spacing="6" fill="#677667">OMAR &amp; GHADA</text>
+<text x="360" y="608" text-anchor="middle" font-family="Georgia,serif" font-size="44" font-style="italic" fill="#586a5b">hand in hand</text>
+<text x="360" y="659" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" letter-spacing="5" fill="#758375">SIDE BY SIDE</text>
+<text x="360" y="829" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="23" fill="#6c786b">19 · 11 · 2026</text>
+</svg>
