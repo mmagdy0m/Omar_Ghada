@@ -1,15 +1,16 @@
 # Omar & Ghada — Wedding Invitation Website
 
-A mobile-first, static wedding invitation website designed for free GitHub Pages hosting.
+A mobile-first, static wedding invitation website, restyled from the supplied Pinterest video in **blush pink, sage green, burgundy and ivory** with romantic layered paper stationery. Designed for free GitHub Pages hosting.
 
 **Wedding:** Thursday, 19 November 2026 at 7:00 PM (Egypt local time)  
-**Venue:** White Cottage — https://maps.app.goo.gl/yUzcFts2Abqxatd29  
+**Venue:** Google Maps location provided by the couple — https://maps.app.goo.gl/yUzcFts2Abqxatd29  
 **Language:** English  
 **RSVP:** Not included (as requested)
 
 ## What's included
 
-- Animated envelope: guests tap to open the invitation.
+- Animated **blush-pink lace envelope with burgundy wax seal**: guests tap to open the invitation.
+- New Pinterest-inspired layered collage: blush envelope, sage save-the-date card, ivory date card, floral artwork and burgundy circular detail button.
 - Personalized wedding invitation, date and time.
 - Live countdown to 19 November 2026, 7:00 PM (Africa/Cairo).
 - Custom November 2026 calendar with the 19th highlighted.
@@ -17,7 +18,7 @@ A mobile-first, static wedding invitation website designed for free GitHub Pages
 - Venue information with a Google Maps directions button.
 - Play/pause music button and a bundled original instrumental loop (`assets/wedding-melody.wav`).
 - Responsive mobile layout, scroll animation and reduced-motion support.
-- No external JavaScript, image, font, hosting or music service required.
+- No external JavaScript, image, hosting or music service required. The site uses **optional Google Fonts** for the elegant calligraphy; system fallback fonts are used without internet. All illustrations are bundled.
 
 ## 1. Publish using GitHub Pages (free)
 
@@ -46,7 +47,7 @@ Then open `http://localhost:8000` in your browser.
 
 ## 3. Add the actual couple's photos
 
-The four bundled SVG illustrations are tasteful **temporary placeholders** because no photos were supplied. Before publishing to guests, you can replace them with real couple photos:
+The four bundled pink/green floral SVG illustrations are **temporary placeholders**, not photos of the couple, because no photos were supplied. Before publishing to guests, you can replace them with real couple photos:
 
 1. Save four photos into `assets` as `photo-1.jpg`, `photo-2.jpg`, `photo-3.jpg`, `photo-4.jpg` (optimized to about 1200 px on the long side for a fast-loading mobile site).
 2. Open `index.html` in a text editor.
@@ -70,9 +71,9 @@ The ZIP contains a simple **original instrumental loop** (`assets/wedding-melody
 ## 5. Update wedding information
 
 - **Names and displayed text:** edit `index.html` (search for `Omar`, `Ghada`).
-- **Venue and Maps link:** edit `index.html` (search for `White Cottage` and the Google Maps URL).
+- **Venue and Maps link:** edit `index.html` (search for `Our Wedding Venue` and the Google Maps URL).
 - **Date and time:** edit `index.html`, and update the `weddingDate` value in `script.js`. This ZIP uses `2026-11-19T19:00:00+02:00`, since Egypt is UTC+02 on the wedding date.
-- **Color palette:** edit the color variables at the top of `styles.css` (`--forest`, `--pink`, `--cream`, etc.).
+- **Color palette:** edit the color variables at the top of `styles.css` (`--burgundy`, `--blush`, `--sage`, etc.).
 - **Social sharing image:** `assets/share-card.svg` is included as a design asset. Some social apps require an absolute HTTPS URL to a PNG or JPEG, rather than an SVG, for their preview image. For dependable WhatsApp/Facebook previews, export `share-card.svg` as `share-card.jpg`, upload it, and replace `og:image` in `index.html` with the **full public image URL** after deployment.
 
 ## Troubleshooting
