@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 470" fill="none">
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#faf7ef"/><stop offset="1" stop-color="#efe7d8"/></linearGradient></defs>
+<rect width="400" height="470" fill="url(#bg)"/>
+<path d="M41 441 C102 300 64 126 196 31" stroke="#879a84" stroke-width="3" stroke-linecap="round"/>
+<path d="M359 434 C288 310 357 154 220 44" stroke="#879a84" stroke-width="3" stroke-linecap="round"/>
+<g fill="#abbda1"><path d="M111 253 Q47 207 65 158 Q116 196 111 253"/><path d="M126 214 Q174 165 161 115 Q120 147 126 214"/><path d="M94 349 Q35 319 30 270 Q91 292 94 349"/><path d="M289 247 Q354 202 339 154 Q292 191 289 247"/><path d="M282 202 Q239 150 254 109 Q298 150 282 202"/><path d="M301 337 Q368 317 383 263 Q314 280 301 337"/></g>
+<ellipse cx="185" cy="266" rx="79" ry="83" stroke="#be9e73" stroke-width="13" transform="rotate(-20 185 266)"/>
+<ellipse cx="235" cy="240" rx="77" ry="84" stroke="#c7a97f" stroke-width="13" transform="rotate(19 235 240)"/>
+<path d="M226 147 L237 127 L251 148 L239 166 Z" fill="#e7e9e2" stroke="#b7a079" stroke-width="5"/>
+<path d="M202 130 L237 127 L252 148" stroke="#c8ac87" stroke-width="3"/>
+<g fill="#c49391" opacity=".9"><circle cx="107" cy="90" r="19"/><circle cx="129" cy="95" r="15"/><circle cx="113" cy="113" r="16"/><circle cx="102" cy="112" r="13"/><circle cx="292" cy="74" r="17"/><circle cx="308" cy="96" r="20"/><circle cx="284" cy="100" r="16"/></g>
+<g fill="#ebd1af"><circle cx="115" cy="101" r="11"/><circle cx="296" cy="91" r="10"/></g>
+<text x="200" y="402" text-anchor="middle" font-family="Georgia,serif" font-size="25" font-style="italic" fill="#758a75">a love to last</text>
+</svg>
