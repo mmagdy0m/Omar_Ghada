@@ -1,118 +1,18 @@
-# Omar & Ghada — Wedding Invitation Website
+# Omar & Ghada Wedding Website – Opening Flicker Fix
 
-A mobile-first, static wedding invitation website, restyled from the supplied Pinterest video in **blush pink, sage green, burgundy and ivory** with romantic layered paper stationery. Designed for free GitHub Pages hosting.
+This update fixes the opening-envelope animation so the invitation card no longer briefly hides and then pops into view.
 
-**Wedding:** Thursday, 19 November 2026 at 7:00 PM (Egypt local time)  
-**Venue:** Google Maps location provided by the couple — https://maps.app.goo.gl/yUzcFts2Abqxatd29  
-**Language:** English  
-**RSVP:** Not included (as requested)
+## What changed
+- The top flap opens first.
+- The card starts rising only after the flap has moved out of the way.
+- The letter keeps a stable layer order behind the pocket front.
+- The opening text and button fade during the animation to avoid overlap.
+- Music still starts on the same click that opens the invitation.
 
-## What's included
+## GitHub update
+Replace these files in your repository root:
+- index.html
+- styles.css
+- script.js
 
-- Animated **blush-pink lace envelope with burgundy wax seal**: guests tap to open the invitation.
-- New Pinterest-inspired layered collage: blush envelope, sage save-the-date card, ivory date card, floral artwork and burgundy circular detail button.
-- Personalized wedding invitation, date and time.
-- Live countdown to 19 November 2026, 7:00 PM (Africa/Cairo).
-- Custom November 2026 calendar with the 19th highlighted.
-- Two real photos of Omar and Ghada, displayed as romantic Polaroid-style portraits; tap either to enlarge.
-- Venue information with a Google Maps directions button.
-- Your supplied MP3 plays automatically **when a guest taps to open the envelope**. Music can then be paused/resumed with the floating button. The song loops.
-- Responsive mobile layout, scroll animation and reduced-motion support.
-- No external JavaScript, image, hosting or music service required. The site uses **optional Google Fonts** for the elegant calligraphy; system fallback fonts are used without internet. All illustrations are bundled.
-
-## 1. Publish using GitHub Pages (free)
-
-1. Sign up for an account at https://github.com/ if you don't already have one.
-2. Click **New repository**, enter a name such as `omar-ghada-wedding`, choose **Public**, then click **Create repository**.
-3. In the new repository choose **Add file > Upload files**.
-4. Unzip the downloaded website ZIP on your computer, then upload **the CONTENTS of the unzipped folder**. That means `index.html`, `styles.css`, `script.js`, `.nojekyll`, `README.md`, and the `assets` folder. **`index.html` must be in the repository's root directory**, not inside another folder. (The hidden `.nojekyll` file is optional.)
-5. Commit the files (using the **Commit changes** button).
-6. Go to **Settings > Pages > Build and deployment**.
-7. Under **Source**, select **Deploy from a branch**. Select branch **main**, folder **/(root)**, then **Save**.
-8. Your free website address will look like `https://YOUR-USERNAME.github.io/omar-ghada-wedding/`. Pages can take a few minutes to go live after the first deployment.
-
-For GitHub's official setup guide, visit: https://docs.github.com/en/pages/quickstart
-
-**Important:** GitHub Pages requires a public repository on GitHub Free. Anyone with the link can view the site. The QR code can point to the same URL.
-
-## 2. Preview on your computer
-
-For a quick preview, double-click `index.html` in a modern web browser. For full functionality when developing, run a local web server from the folder:
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in your browser.
-
-## Latest update — corrected invitation paper animation (29 October 2026)
-
-The opening remains the original blush-pink, lace-edged envelope with burgundy wax seal and **Omar & Ghada** heading. The paper now:
-
-- Slides out of the envelope smoothly at a natural size and remains centered, with all three lines readable.
-- Stays tucked behind the envelope's front folds while it rises.
-- No longer covers the large heading, subtitle, or opening button: these fade away during the card's movement.
-- Completes the transition into the website only after the paper has emerged.
-- Starts the uploaded MP3 on the **same tap** as the opening animation; pause/resume remains available.
-
-**Update your existing GitHub Pages site:** Replace only `index.html`, `styles.css` and `script.js` at the repository root. The files use a fresh query parameter (`v=20261029-envelope-fix`) so browsers will reload the new stylesheet and script. Leave the `assets/` directory intact. For a clean installation, upload the entire extracted ZIP as before.
-
-## Latest update — natural-sized photo cards and music on opening click
-
-- Both photos now display without **cropping or distortion** using their full original 3:4 portrait ratio.
-- The two Polaroid cards stay at a natural width of approximately 260px each on desktop, centered with a gentle angle, instead of stretching across the page.
-- On phones, the cards stack vertically, keeping their full photo proportions.
-- Opening the envelope or pressing **Open your invitation** directly calls the MP3 `play()` action inside the click event, before the envelope animation starts. The first play no longer attempts to seek ahead of loading, which can interfere with playback on some phones.
-- `styles.css?v=20261029-envelope-fix` and `script.js?v=20261029-envelope-fix` in `index.html` force browsers to fetch the latest design and behavior after you update GitHub Pages.
-
-**To update an existing site:** Upload the three updated files `index.html`, `styles.css`, and `script.js` to the root of your repository (replace old files). If your existing MP3 is already in `assets/`, you do not need to re-upload it. For a fresh deploy, upload the full ZIP contents.
-
-Note: Browser audio may take a moment to buffer on slow connections, but the playback request is sent **as soon as the user clicks**. Browsers require a gesture before playing audible music. Confirm you have permission to publish the song publicly.
-
-## 3. The two-photo gallery
-
-The Gallery / Our Little Moments section now shows **exactly two photos** of Omar and Ghada. Both photos are bundled locally in the `assets/` directory as:
-
-- `assets/omar-ghada-photo-1.jpg`
-- `assets/omar-ghada-photo-2.jpg`
-
-Their photos retain their portrait proportions, and tapping a picture opens a larger view. The old flower illustration placeholders have been removed.
-
-To replace a photo later, simply use the same filename for the new JPEG and upload it. To update the captions, search for `Side by side` and `Our favorite moments` in `index.html`.
-
-**Privacy:** The website and photographs will be publicly viewable by anyone with the GitHub Pages link and can potentially be indexed or saved by visitors. Only publish with the couple's permission.
-
-## 4. Your song plays as the envelope opens
-
-- Bundled song: `assets/omar-ghada-wedding-song.mp3` (the MP3 you uploaded).
-- Clicking the pink envelope **or** the Open your invitation button starts the song immediately, synchronized to the start of the opening animation.
-- The floating music button can pause or resume at any time.
-- The song loops when it reaches the end.
-- The envelope appears on every new page load, including refresh, so the browser receives a fresh tap gesture before starting audio. Modern browsers do not permit reliable sound playback before that tap. On a device that blocks playback, visitors can tap the music button manually.
-- To change the track, replace `assets/omar-ghada-wedding-song.mp3` with a different MP3 under the same filename.
-- **Copyright:** Only publish the uploaded recording on a public website if you have permission or a suitable license for public online use. GitHub Pages files are publicly retrievable.
-
-## 5. Update wedding information
-
-- **Names and displayed text:** edit `index.html` (search for `Omar`, `Ghada`).
-- **Venue and Maps link:** edit `index.html` (search for `Our Wedding Venue` and the Google Maps URL).
-- **Date and time:** edit `index.html`, and update the `weddingDate` value in `script.js`. This ZIP uses `2026-11-19T19:00:00+02:00`, since Egypt is UTC+02 on the wedding date.
-- **Color palette:** edit the color variables at the top of `styles.css` (`--burgundy`, `--blush`, `--sage`, etc.).
-- **Social sharing image:** `assets/share-card.svg` is included as a design asset. Some social apps require an absolute HTTPS URL to a PNG or JPEG, rather than an SVG, for their preview image. For dependable WhatsApp/Facebook previews, export `share-card.svg` as `share-card.jpg`, upload it, and replace `og:image` in `index.html` with the **full public image URL** after deployment.
-
-## Troubleshooting
-
-- **404 Not Found:** Confirm `index.html` is at the repository root, the Pages branch is `main`, and the folder is `/(root)`. Check repository deployment status and wait for the first publish.
-- **No audio:** Visitors first tap the envelope or Open your invitation. If playback is blocked, tap MUSIC OFF / TAP TO PLAY. Confirm `assets/omar-ghada-wedding-song.mp3` exists and device sound is enabled.
-- **Images don't show:** File paths are case-sensitive on GitHub Pages; use matching filenames and extensions.
-- **Invitation opens on every refresh:** The envelope intentionally reappears, allowing the next tap to start music again in compliance with browser playback rules.
-- **Countdown timezone:** It uses Egypt time for the wedding, not the guest's location.
-
-Made for Omar & Ghada, 2026.
-
-
-## October 28: portrait gallery repair
-
-The two real couple photos are now displayed at their natural **3:4 portrait ratio** in two centered Polaroid cards (maximum width 320 px each). No `object-fit: cover` cropping is used. The two cards stack at mobile widths. Both `styles.css` and **embedded styles in `index.html`** include this fix; the embedded version also prevents stale external GitHub Pages CSS from breaking the gallery. Music still begins directly when the invitation opening button is clicked.
-
-To replace the website: upload the **contents** of this ZIP to the repository root, not the ZIP and not a parent folder. Make sure `index.html`, `script.js`, and `styles.css` are alongside each other, and `assets/` is a sibling folder. Commit file replacements; then open the live Pages URL with `?gallery=20261028-4` appended, or use Ctrl+Shift+R to reload. If it is still narrow, inspect whether the GitHub Pages site is publishing from your chosen root/branch and confirm that source of the live page contains `couple-gallery` and `gallery-portrait-repair`.
+Keep the existing assets folder.

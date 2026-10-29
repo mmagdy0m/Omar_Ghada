@@ -31,6 +31,12 @@
 
   openButton.addEventListener('click', openInvitation);
   openCta.addEventListener('click', openInvitation);
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('previewOpen')) {
+    window.setTimeout(() => {
+      if (!hasOpened) openInvitation();
+    }, 1200);
+  }
   // Always show the envelope on each fresh visit/reload. This ensures the
   // sound starts only after the guest deliberately opens the invitation.
 
