@@ -24,3 +24,12 @@ GitHub Pages is static; it cannot save submitted messages by itself. This form s
 **Privacy/security:** The Sheet stays private to its owner(s), but the publicly accessible web-app submission URL is embedded in the website's JS and could receive spam. The form includes basic length validation and a hidden spam field but is not a full anti-spam system. Never put API keys, passwords, or secrets in this repository. Treat guest names/messages as personal data. Messages will not be displayed on the public website.
 
 **Submission note:** Google Apps Script redirects prevent a static site from reliably reading the response to a cross-origin POST. The UI confirms the request was sent for delivery, not that the Sheet definitely saved it. Always test with your actual deployment. For confirmed server-side responses and stronger spam prevention, use a dedicated form provider or backend.
+
+
+## October 29 — mobile alignment and section update
+
+- The large **Love grows here** green artwork has been removed from the Invitation section. Wedding details remain visible, now centered in three tidy information cards on wide screens and stacked on phones.
+- The opening screen has responsive sizing for titles, envelope, button, and decorations on narrow phones. The page also clips horizontal overflow that caused sideways shifting.
+- `styles.css` has a versioned query string in `index.html` to help visitors see the update after deployment.
+
+To update the existing GitHub Pages website, replace `index.html` and `styles.css` from the fix-only package. All photo, music, calendar, and Wishes assets stay unchanged.

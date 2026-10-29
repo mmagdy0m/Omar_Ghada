@@ -322,3 +322,167 @@
 .wishes-private{font:normal 12px/1.55 var(--sans);color:#947e85}
 .wishes-honeypot{position:absolute!important;width:1px;height:1px;left:-10000px;overflow:hidden;opacity:0;pointer-events:none}
 @media(max-width:760px){.wishes-section{grid-template-columns:1fr;gap:32px}.wishes-intro{text-align:center}.wishes-intro>p{margin-left:auto;margin-right:auto}.wishes-form{max-width:520px;width:100%;margin:auto}.wishes-flowers{width:210px;right:-90px;bottom:-75px}}
+
+
+/* 29 October 2026 — mobile centering & remove decorative intro artwork.
+   The intro copy is retained and gets a balanced centered layout. */
+.intro-section.intro-no-art {
+  display: block;
+  background: #fffcf9;
+  padding-top: clamp(82px, 9vw, 125px);
+  padding-bottom: clamp(82px, 9vw, 125px);
+}
+.intro-section.intro-no-art .intro-copy {
+  width: min(100%, 910px);
+  max-width: 910px;
+  min-width: 0;
+  margin-inline: auto;
+  text-align: center;
+}
+.intro-section.intro-no-art .mini-flower {
+  margin: 18px auto 14px;
+}
+.intro-section.intro-no-art .intro-copy h2 {
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1.05;
+}
+.intro-section.intro-no-art .intro-paragraph {
+  max-width: 680px;
+  margin: 26px auto 38px;
+}
+.intro-section.intro-no-art .event-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  border: 0;
+  margin: 0 auto 36px;
+  max-width: 900px;
+}
+.intro-section.intro-no-art .fact {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  align-items: center;
+  justify-content: center;
+  min-height: 136px;
+  min-width: 0;
+  padding: 20px 14px;
+  border: 1px solid #e6cfd5;
+  background: #fff8f9;
+}
+.intro-section.intro-no-art .fact:last-child {border-bottom: 1px solid #e6cfd5;}
+.intro-section.intro-no-art .fact strong {
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+
+/* Keep the viewport (and fixed intro overlay) aligned to the phone screen.
+   Oversized florals and stationery no longer expand horizontal scroll width. */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+.opening-screen {
+  width: 100%;
+  max-width: 100vw;
+  left: 0;
+  right: 0;
+  overflow: clip;
+}
+.opening-screen .opening-inner {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+}
+.opening-screen .opening-title,
+.opening-screen .opening-subtitle,
+.opening-screen .open-hint,
+.opening-screen .opening-eyebrow {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 670px) {
+  .intro-section.intro-no-art { padding: 80px 22px; }
+  .intro-section.intro-no-art .intro-copy h2 { font-size: clamp(45px, 11.6vw, 64px); }
+  .intro-section.intro-no-art .intro-paragraph { font-size: 21px; margin-bottom: 28px; }
+  .intro-section.intro-no-art .event-facts { grid-template-columns: 1fr; gap: 12px; max-width: 460px; }
+  .intro-section.intro-no-art .fact { min-height: 98px; padding: 19px 13px; gap: 8px; }
+  .intro-section.intro-no-art .fact strong { font-size: 20px; }
+
+  .opening-screen .opening-inner {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px clamp(16px, 5vw, 24px);
+    overflow: visible;
+  }
+  .opening-screen .opening-eyebrow {
+    font-size: clamp(8px, 2vw, 10px);
+    letter-spacing: .16em;
+    line-height: 1.6;
+  }
+  .opening-screen .opening-title {
+    font-size: clamp(34px, 10.1vw, 61px);
+    line-height: 1.16;
+    white-space: nowrap;
+    margin-top: 12px;
+    letter-spacing: -.01em;
+  }
+  .opening-screen .opening-subtitle {
+    font-size: clamp(16px, 4vw, 19px);
+    margin-top: 10px;
+    line-height: 1.3;
+  }
+  .opening-screen .envelope-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(100%, 345px);
+    height: 260px;
+    min-width: 0;
+    transform: none;
+    margin: 4px auto 0;
+  }
+  .opening-screen .envelope {
+    width: min(325px, 100%);
+    height: auto;
+    aspect-ratio: 325 / 212;
+  }
+  .opening-screen .open-cta {
+    max-width: calc(100vw - 38px);
+    padding: 14px 22px;
+    margin-top: 7px;
+  }
+  .opening-screen .open-hint {
+    font-size: clamp(16px, 4vw, 19px);
+    margin-top: 17px;
+    line-height: 1.3;
+  }
+  .opening-bouquet-a {top:-110px;left:-130px;}
+  .opening-bouquet-b {bottom:-130px;right:-130px;}
+  .hero-title-block h1 {
+    font-size: clamp(43px, 10.8vw, 76px);
+    line-height: 1.1;
+  }
+}
+@media (max-width: 380px) {
+  .opening-screen .opening-title {font-size: clamp(32px, 10.1vw, 42px);}
+  .opening-screen .envelope-button {height: 235px; width: min(100%, 320px); margin: 0 auto; transform: none;}
+  .opening-screen .envelope {width: min(300px, 100%);}
+  .opening-screen .open-hint {font-size: 16px;}
+  .hero-title-block h1 {font-size: clamp(39px, 10.5vw, 52px);}
+}
+@media (max-height: 680px) and (max-width: 670px) {
+  .opening-screen .opening-inner {padding-block: 8px;}
+  .opening-screen .envelope-button {height: 220px;}
+  .opening-screen .open-hint {margin-top: 8px;}
+}
