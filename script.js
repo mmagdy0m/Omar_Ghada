@@ -26,7 +26,7 @@
     overlay.classList.add('is-opening');
     openButton.disabled = true;
     openCta.disabled = true;
-    window.setTimeout(finishOpening, reducedMotion ? 100 : 1400);
+    window.setTimeout(finishOpening, reducedMotion ? 100 : 1650);
   }
 
   openButton.addEventListener('click', openInvitation);

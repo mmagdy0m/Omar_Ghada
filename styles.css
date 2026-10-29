@@ -177,3 +177,70 @@
 @media (prefers-reduced-motion:reduce) {
   #moments .couple-gallery .couple-photo-card:hover { transform: none !important; }
 }
+
+
+/* 2026-10-29 opening polish: paper remains a believable size and never
+   intersects the opening heading or visible call-to-action while it rises. */
+.opening-screen .opening-eyebrow,
+.opening-screen .opening-title,
+.opening-screen .opening-subtitle,
+.opening-screen .open-cta,
+.opening-screen .open-hint {
+  transition: opacity .34s ease, transform .55s ease;
+}
+.opening-screen.is-opening .opening-eyebrow,
+.opening-screen.is-opening .opening-title,
+.opening-screen.is-opening .opening-subtitle {
+  opacity: 0;
+  transform: translateY(-18px);
+  pointer-events: none;
+}
+.opening-screen.is-opening .open-cta,
+.opening-screen.is-opening .open-hint {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+/* At rest the letter stays mostly tucked inside the envelope.
+   When opened, it lifts only far enough to show all three text lines. */
+.opening-screen .envelope-letter {
+  height: 178px;
+  top: 8px;
+  left: 22px;
+  right: 22px;
+  padding-top: 16px;
+  overflow: visible;
+  border: 1px solid #e5ccd3;
+  background: linear-gradient(142deg,#fffdfb,#fff7f3);
+  box-shadow: 0 4px 12px #6f455021;
+  transition: transform 1.02s cubic-bezier(.19,.72,.2,1) .24s;
+}
+.opening-screen .envelope-letter::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #b9919c39;
+  pointer-events: none;
+}
+.opening-screen .letter-sprig { font-size: 22px; line-height: 1.1; }
+.opening-screen .letter-name {
+  margin-top: 5px;
+  font-size: 35px;
+  line-height: 1.18;
+}
+.opening-screen .letter-name em { font-size: 22px; }
+.opening-screen .letter-date { margin-top: 9px; font-size: 9px; }
+.opening-screen.is-opening .envelope-letter { transform: translateY(-119px); }
+.opening-screen .envelope {
+  transition: transform 1.06s cubic-bezier(.25,.71,.28,1);
+}
+.opening-screen.is-opening .envelope { transform: translateY(37px); }
+.opening-screen.is-opening .envelope-flap { transform: rotateX(180deg); z-index: 1; }
+/* The envelope front stays above the card to form a realistic pocket. */
+.opening-screen .envelope-front { z-index: 4; }
+.opening-screen .envelope-letter { z-index: 3; }
+.opening-screen .envelope-flap { z-index: 5; }
+.opening-screen.is-opening .envelope-flap { z-index: 2; }
+@media (max-width: 380px) {
+  .opening-screen.is-opening .envelope { transform: translateY(32px); }
+}

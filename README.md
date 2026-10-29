@@ -45,13 +45,25 @@ python -m http.server 8000
 
 Then open `http://localhost:8000` in your browser.
 
+## Latest update — corrected invitation paper animation (29 October 2026)
+
+The opening remains the original blush-pink, lace-edged envelope with burgundy wax seal and **Omar & Ghada** heading. The paper now:
+
+- Slides out of the envelope smoothly at a natural size and remains centered, with all three lines readable.
+- Stays tucked behind the envelope's front folds while it rises.
+- No longer covers the large heading, subtitle, or opening button: these fade away during the card's movement.
+- Completes the transition into the website only after the paper has emerged.
+- Starts the uploaded MP3 on the **same tap** as the opening animation; pause/resume remains available.
+
+**Update your existing GitHub Pages site:** Replace only `index.html`, `styles.css` and `script.js` at the repository root. The files use a fresh query parameter (`v=20261029-envelope-fix`) so browsers will reload the new stylesheet and script. Leave the `assets/` directory intact. For a clean installation, upload the entire extracted ZIP as before.
+
 ## Latest update — natural-sized photo cards and music on opening click
 
 - Both photos now display without **cropping or distortion** using their full original 3:4 portrait ratio.
 - The two Polaroid cards stay at a natural width of approximately 260px each on desktop, centered with a gentle angle, instead of stretching across the page.
 - On phones, the cards stack vertically, keeping their full photo proportions.
 - Opening the envelope or pressing **Open your invitation** directly calls the MP3 `play()` action inside the click event, before the envelope animation starts. The first play no longer attempts to seek ahead of loading, which can interfere with playback on some phones.
-- `styles.css?v=3` and `script.js?v=3` in `index.html` force browsers to fetch the latest design and behavior after you update GitHub Pages.
+- `styles.css?v=20261029-envelope-fix` and `script.js?v=20261029-envelope-fix` in `index.html` force browsers to fetch the latest design and behavior after you update GitHub Pages.
 
 **To update an existing site:** Upload the three updated files `index.html`, `styles.css`, and `script.js` to the root of your repository (replace old files). If your existing MP3 is already in `assets/`, you do not need to re-upload it. For a fresh deploy, upload the full ZIP contents.
 
