@@ -298,3 +298,27 @@
     transform: translateY(-110px);
   }
 }
+
+
+/* Wedding Wishes — boutique pink stationery form */
+.calendar-download{margin-top:25px;display:inline-flex;align-items:center;gap:12px;max-width:max-content;text-decoration:none}
+.calendar-help{font:italic 16px var(--serif);color:#987582;margin:10px 0 0}
+.wishes-section{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,105px);align-items:center;background:linear-gradient(130deg,#fcf5f6 0%,#f8e9ef 100%);overflow:hidden}
+.wishes-flowers{position:absolute;z-index:0;width:min(350px,35vw);right:-96px;bottom:-118px;transform:rotate(160deg);opacity:.55;pointer-events:none}
+.wishes-section>*:not(.wishes-flowers){position:relative;z-index:1}
+.wishes-intro h2{font:normal clamp(54px,5.6vw,83px)/1.03 var(--serif);margin:24px 0;color:var(--ink)}
+.wishes-intro h2 em{font-weight:400;color:var(--burgundy)}
+.wishes-intro>p{font:normal clamp(20px,2.3vw,25px)/1.55 var(--serif);color:#826974;max-width:510px}
+.wishes-signature{display:block;margin-top:31px;font:normal clamp(29px,3.5vw,46px) var(--script);color:var(--burgundy)}
+.wishes-form{display:flex;flex-direction:column;gap:10px;background:#fffbf9;outline:1px solid #dbaeba;outline-offset:-14px;border:1px solid #e5c7d0;padding:clamp(28px,4vw,50px);box-shadow:0 17px 42px #63344f20}
+.wishes-form-heading{text-align:center;font:italic 27px var(--serif);margin:2px 0 16px;color:var(--burgundy)}
+.wishes-form label{font:600 10px var(--sans);letter-spacing:.2em;color:var(--burgundy);margin-top:9px}
+.wishes-form input:not([type="hidden"]),.wishes-form textarea{width:100%;border:1px solid #e7cdd5;border-radius:0;background:#fffefe;padding:15px 16px;color:#573b47;font:normal 19px/1.5 var(--serif);outline-offset:4px}
+.wishes-form textarea{resize:vertical;min-height:135px}
+.wishes-form input:focus,.wishes-form textarea:focus{border-color:var(--burgundy);outline:2px solid #d9b5c1}
+.wishes-form .wishes-submit{margin-top:12px;align-self:flex-start;cursor:pointer}
+.wishes-form .wishes-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.wishes-status{min-height:1.5em;font:italic 16px var(--serif);color:var(--burgundy)}
+.wishes-private{font:normal 12px/1.55 var(--sans);color:#947e85}
+.wishes-honeypot{position:absolute!important;width:1px;height:1px;left:-10000px;overflow:hidden;opacity:0;pointer-events:none}
+@media(max-width:760px){.wishes-section{grid-template-columns:1fr;gap:32px}.wishes-intro{text-align:center}.wishes-intro>p{margin-left:auto;margin-right:auto}.wishes-form{max-width:520px;width:100%;margin:auto}.wishes-flowers{width:210px;right:-90px;bottom:-75px}}

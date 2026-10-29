@@ -12,8 +12,9 @@
   <meta name="color-scheme" content="light" />
   <title>Omar & Ghada | 19 November 2026</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css?v=20261029-envelope-fix" />
-  <script src="script.js?v=20261029-envelope-fix" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261029-wishes-calendar-1" />
+  <script src="config.js?v=20261029-wishes-calendar-1" defer></script>
+  <script src="script.js?v=20261029-wishes-calendar-1" defer></script>
 <style id="gallery-portrait-repair">
 
 /* Gallery repair 28 Oct 2026: independent sizing, no cropped portraits. */
@@ -142,6 +143,7 @@
       <a href="#details">Our day</a>
       <a href="#moments">Gallery</a>
       <a href="#venue">The venue</a>
+      <a href="#wishes">Your wishes</a>
     </nav>
     <a class="header-date" href="#details">19 · 11 · 26</a>
   </header>
@@ -231,6 +233,8 @@
         <h2 id="calendarTitle">Mark your <em>calendar.</em></h2>
         <p>One date, a thousand memories. We can't imagine celebrating without you.</p>
         <div class="calendar-standout"><span>19</span><div><strong>NOVEMBER</strong><small>THURSDAY · 7:00 PM</small></div></div>
+        <a class="button-primary calendar-download" href="assets/Omar-and-Ghada-Wedding.ics" download="Omar-and-Ghada-Wedding.ics">Save to Calendar <span aria-hidden="true">↗</span></a>
+        <p class="calendar-help">Download an event for your Apple, Google, or Outlook calendar.</p>
       </div>
       <div class="calendar-card reveal" aria-label="November 2026 calendar with the 19th highlighted">
         <div class="calendar-heading"><span>2026</span><strong>NOVEMBER</strong><span>✧</span></div>
@@ -277,6 +281,28 @@
         <img src="assets/pinterest-bouquet.svg" class="venue-art-flowers" alt="" />
         <span class="venue-art-label">A SPECIAL DAY AWAITS</span>
       </div>
+    </section>
+
+
+    <section class="wishes-section section-pad" id="wishes" aria-labelledby="wishesTitle">
+      <img class="wishes-flowers" src="assets/pinterest-bouquet.svg" alt="" loading="lazy" aria-hidden="true" />
+      <div class="wishes-intro reveal">
+        <span class="eyebrow section-kicker">05 / NOTES FROM THE HEART</span>
+        <h2 id="wishesTitle">Leave us a <em>little love.</em></h2>
+        <p>Your kind words mean so much. Leave a note for Omar &amp; Ghada to treasure forever.</p>
+        <span class="wishes-signature">With all our love, O &amp; G</span>
+      </div>
+      <form class="wishes-form reveal" id="wishesForm" autocomplete="on" aria-label="Send wedding wishes">
+        <span class="wishes-form-heading">A note for the happy couple</span>
+        <label for="wishName">YOUR NAME</label>
+        <input id="wishName" name="name" type="text" maxlength="65" autocomplete="name" placeholder="Your name" required />
+        <label for="wishMessage">YOUR MESSAGE</label>
+        <textarea id="wishMessage" name="message" rows="5" maxlength="800" minlength="5" placeholder="Write your wishes here..." required></textarea>
+        <div class="wishes-honeypot" aria-hidden="true"><label for="wishWebsite">Website (leave empty)</label><input id="wishWebsite" type="text" name="website" tabindex="-1" autocomplete="off" /></div>
+        <button type="submit" class="button-primary wishes-submit" id="wishesSubmit" disabled>Send our wishes <span aria-hidden="true">♡</span></button>
+        <p class="wishes-status" id="wishesStatus" role="status" aria-live="polite">The message box will open soon.</p>
+        <p class="wishes-private">Your message is private — only the couple will receive it.</p>
+      </form>
     </section>
 
     <section class="closing-section section-pad" aria-labelledby="closingTitle">

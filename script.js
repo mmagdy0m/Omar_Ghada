@@ -145,4 +145,44 @@
   } else {
     document.querySelectorAll('.reveal').forEach((element) => element.classList.add('visible'));
   }
+  // Private guest wishes stored through a Google Apps Script web app in a
+  // Google Sheet owned by Omar & Ghada. Configure the URL in config.js.
+  const wishesForm = document.getElementById('wishesForm');
+  const wishesSubmit = document.getElementById('wishesSubmit');
+  const wishesStatus = document.getElementById('wishesStatus');
+  const wishesEndpoint = String(window.OMAR_GHADA_GUESTBOOK_ENDPOINT || '').trim();
+  if (wishesEndpoint && /^https:\/\/script\.google\.com\/macros\/s\/[^\s]+\/exec$/.test(wishesEndpoint)) {
+    wishesSubmit.disabled = false;
+    wishesStatus.textContent = 'Your message will be sent privately to the couple.';
+    wishesForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!wishesForm.reportValidity()) return;
+      if (document.getElementById('wishWebsite').value.trim()) return;
+      const name = document.getElementById('wishName').value.trim();
+      const message = document.getElementById('wishMessage').value.trim();
+      if (!name || message.length < 5) return;
+      wishesSubmit.disabled = true;
+      wishesStatus.textContent = 'Sending your message...';
+      try {
+        // Apps Script web apps redirect across Google domains. no-cors lets
+        // static GitHub Pages submit without a CORS preflight. It does NOT
+        // expose a confirmation that the Sheet was updated.
+        await fetch(wishesEndpoint, {
+          method: 'POST', mode: 'no-cors', redirect: 'follow',
+          headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+          body: JSON.stringify({name, message, website: ''})
+        });
+        wishesStatus.textContent = 'Your message was sent for delivery. Thank you for your wishes!';
+        wishesForm.reset();
+      } catch (err) {
+        console.error('Unable to submit guest message:', err);
+        wishesStatus.textContent = 'Could not send your message. Please try again.';
+      } finally {
+        wishesSubmit.disabled = false;
+      }
+    });
+  } else {
+    wishesSubmit.disabled = true;
+    wishesStatus.textContent = 'The message box will open soon.';
+  }
 })();

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Omar and Ghada//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:omar-ghada-wedding-20261119@omar-ghada-wedding
+DTSTAMP:20261029T000000Z
+DTSTART:20261119T170000Z
+DTEND:20261119T180000Z
+SUMMARY:Omar & Ghada Wedding
+LOCATION:https://maps.app.goo.gl/yUzcFts2Abqxatd29
+DESCRIPTION:Join us for Omar and Ghada's wedding on Thursday\, November 19\, 2026 at 7:00 PM Egypt time. Directions: https://maps.app.goo.gl/yUzcFts2Abqxatd29\nCalendar duration is a one-hour placeholder only\; the wedding's end time has not been announced.
+URL:https://maps.app.goo.gl/yUzcFts2Abqxatd29
+END:VEVENT
+END:VCALENDAR
