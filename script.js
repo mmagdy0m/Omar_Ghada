@@ -20,9 +20,9 @@
   function openInvitation() {
     if (hasOpened) return;
     hasOpened = true;
-    // Call play() immediately inside the user's tap/click event. This is essential
-    // for iOS Safari and other browsers that restrict autoplay with sound.
-    startWeddingMusic(true);
+    // This runs FIRST and directly inside the same trusted user click. We do not
+    // wait for the envelope animation or any async media-loading operation.
+    startWeddingMusic();
     overlay.classList.add('is-opening');
     openButton.disabled = true;
     openCta.disabled = true;
@@ -69,17 +69,23 @@
     musicToggle.querySelector('.music-label').textContent = playing ? 'MUSIC ON' : 'MUSIC OFF';
   }
 
-  function startWeddingMusic(restart = false) {
+  // Preload while the guest sees the envelope, so sound can begin quickly.
+  // Some mobile browsers ignore preload until interaction; the click still
+  // directly invokes play() and is never delayed behind a Promise or timer.
+  music.preload = 'auto';
+  music.volume = 0.7;
+  if (music.networkState === HTMLMediaElement.NETWORK_EMPTY) music.load();
+
+  function startWeddingMusic() {
     try {
-      music.volume = 0.7;
-      if (restart) music.currentTime = 0;
-      // Do not await before calling play: it must happen inside click handler.
+      // Do not seek to time 0 before the first play: on phones where the MP3
+      // has not loaded yet, seeking can fail or postpone sound unnecessarily.
       const attempt = music.play();
       if (attempt && typeof attempt.catch === 'function') {
         attempt.catch((error) => {
           setMusicState(false);
           musicToggle.querySelector('.music-label').textContent = 'TAP TO PLAY';
-          console.warn('Audio playback needs an additional tap on this device:', error);
+          console.warn('Audio playback was blocked or could not load:', error);
         });
       }
     } catch (error) {

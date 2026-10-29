@@ -45,6 +45,18 @@ python -m http.server 8000
 
 Then open `http://localhost:8000` in your browser.
 
+## Latest update — natural-sized photo cards and music on opening click
+
+- Both photos now display without **cropping or distortion** using their full original 3:4 portrait ratio.
+- The two Polaroid cards stay at a natural width of approximately 260px each on desktop, centered with a gentle angle, instead of stretching across the page.
+- On phones, the cards stack vertically, keeping their full photo proportions.
+- Opening the envelope or pressing **Open your invitation** directly calls the MP3 `play()` action inside the click event, before the envelope animation starts. The first play no longer attempts to seek ahead of loading, which can interfere with playback on some phones.
+- `styles.css?v=3` and `script.js?v=3` in `index.html` force browsers to fetch the latest design and behavior after you update GitHub Pages.
+
+**To update an existing site:** Upload the three updated files `index.html`, `styles.css`, and `script.js` to the root of your repository (replace old files). If your existing MP3 is already in `assets/`, you do not need to re-upload it. For a fresh deploy, upload the full ZIP contents.
+
+Note: Browser audio may take a moment to buffer on slow connections, but the playback request is sent **as soon as the user clicks**. Browsers require a gesture before playing audible music. Confirm you have permission to publish the song publicly.
+
 ## 3. The two-photo gallery
 
 The Gallery / Our Little Moments section now shows **exactly two photos** of Omar and Ghada. Both photos are bundled locally in the `assets/` directory as:
@@ -85,3 +97,10 @@ To replace a photo later, simply use the same filename for the new JPEG and uplo
 - **Countdown timezone:** It uses Egypt time for the wedding, not the guest's location.
 
 Made for Omar & Ghada, 2026.
+
+
+## October 28: portrait gallery repair
+
+The two real couple photos are now displayed at their natural **3:4 portrait ratio** in two centered Polaroid cards (maximum width 320 px each). No `object-fit: cover` cropping is used. The two cards stack at mobile widths. Both `styles.css` and **embedded styles in `index.html`** include this fix; the embedded version also prevents stale external GitHub Pages CSS from breaking the gallery. Music still begins directly when the invitation opening button is clicked.
+
+To replace the website: upload the **contents** of this ZIP to the repository root, not the ZIP and not a parent folder. Make sure `index.html`, `script.js`, and `styles.css` are alongside each other, and `assets/` is a sibling folder. Commit file replacements; then open the live Pages URL with `?gallery=20261028-4` appended, or use Ctrl+Shift+R to reload. If it is still narrow, inspect whether the GitHub Pages site is publishing from your chosen root/branch and confirm that source of the live page contains `couple-gallery` and `gallery-portrait-repair`.

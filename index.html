@@ -12,8 +12,100 @@
   <meta name="color-scheme" content="light" />
   <title>Omar & Ghada | 19 November 2026</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=gallery-20261028-4" />
+  <script src="script.js?v=gallery-20261028-4" defer></script>
+<style id="gallery-portrait-repair">
+
+/* Gallery repair 28 Oct 2026: independent sizing, no cropped portraits. */
+#moments .couple-gallery {
+  width: min(100%, 760px);
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center;
+  align-items: start;
+  gap: clamp(24px, 5vw, 60px);
+}
+#moments .couple-gallery .couple-photo-card {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: auto;
+  overflow: visible;
+  margin: 12px 0 0;
+  padding: 12px 12px 52px;
+  background: #fffefd;
+  border: 1px solid #eadce1;
+  box-shadow: 0 15px 35px rgba(93, 52, 69, .17);
+  text-align: left;
+  transform-origin: 50% 50%;
+}
+#moments .couple-gallery .couple-photo-card:nth-child(1) {
+  margin-top: 30px;
+  transform: rotate(-3deg);
+}
+#moments .couple-gallery .couple-photo-card:nth-child(2) {
+  margin-top: 8px;
+  transform: rotate(3deg);
+}
+#moments .couple-gallery .couple-photo-card > img {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  background: #f9f0ef;
+}
+#moments .couple-gallery .couple-photo-card figcaption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font: italic clamp(16px, 2vw, 20px) / 1.15 var(--serif);
+  color: var(--burgundy);
+}
+#moments .couple-gallery .couple-photo-card figcaption span:first-child {
+  font: 600 10px var(--sans);
+  letter-spacing: .12em;
+  color: #987e86;
+}
+#moments .couple-gallery .couple-photo-card:hover {
+  transform: translateY(-5px) rotate(0) !important;
+}
+@media (max-width: 690px) {
+  #moments .couple-gallery {
+    width: min(100%, 340px);
+    grid-template-columns: minmax(0, 320px);
+    gap: 30px;
+  }
+  #moments .couple-gallery .couple-photo-card { margin-top: 0; }
+  #moments .couple-gallery .couple-photo-card:nth-child(1) { margin-top: 0; transform: rotate(-2deg); }
+  #moments .couple-gallery .couple-photo-card:nth-child(2) { margin-top: 0; transform: rotate(2deg); }
+}
+@media (max-width: 360px) {
+  #moments .couple-gallery { width: min(100%, 290px); }
+  #moments .couple-gallery .couple-photo-card { padding: 9px 9px 48px; }
+  #moments .couple-gallery .couple-photo-card figcaption { font-size: 17px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #moments .couple-gallery .couple-photo-card:hover { transform: none !important; }
+}
+</style>
 </head>
 <body class="invite-locked">
   <a class="skip-link" href="#main">Skip to the invitation</a>
@@ -154,15 +246,16 @@
       </div>
     </section>
 
+    <!-- Corrected gallery: cards 320px wide, 3:4 image ratio, no crop. -->
     <section class="moments-section section-pad" id="moments" aria-labelledby="momentsTitle">
       <div class="section-heading-center reveal"><span class="eyebrow section-kicker">03 / OUR LITTLE MOMENTS</span><h2 id="momentsTitle">A glimpse of <em>our story.</em></h2><p>Little memories, a lifetime of love.</p></div>
-      <div class="gallery-grid" aria-label="Photos of Omar and Ghada">
-        <figure class="gallery-item gallery-item-1 reveal">
+      <div class="couple-gallery" data-gallery-version="portrait-layout-20261028" aria-label="Photos of Omar and Ghada">
+        <figure class="gallery-item couple-photo-card">
           <img src="assets/omar-ghada-photo-1.jpg" alt="Omar and Ghada smiling together, Ghada holding a wrapped bouquet" loading="lazy" width="960" height="1280" />
           <figcaption><span>01</span><span>Side by side</span></figcaption>
           <button class="gallery-view" type="button" aria-label="Enlarge the first photo of Omar and Ghada"></button>
         </figure>
-        <figure class="gallery-item gallery-item-2 reveal">
+        <figure class="gallery-item couple-photo-card">
           <img src="assets/omar-ghada-photo-2.jpg" alt="Omar and Ghada smiling together in celebration outfits, Ghada holding white tulips" loading="lazy" width="960" height="1280" />
           <figcaption><span>02</span><span>Our favorite moments</span></figcaption>
           <button class="gallery-view" type="button" aria-label="Enlarge the second photo of Omar and Ghada"></button>
